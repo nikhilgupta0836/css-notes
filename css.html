@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Notes & Examples</title>
+<style>
+  /* ====== 1. Basic Styles ====== */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background: #f5f5f5;
+    color: #333;
+  }
+  h1, h2, h3 { color: #4a90e2; }
+  section { margin-bottom: 50px; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+  code { background: #eee; padding: 2px 6px; border-radius: 4px; }
+
+  /* ====== 2. Box Model Example ====== */
+  .box {
+    width: 150px;
+    height: 100px;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid #4a90e2;
+    background: #d9eaff;
+    text-align: center;
+    line-height: 100px;
+    box-sizing: border-box;
+  }
+
+  /* ====== 3. Flexbox Example ====== */
+  .flex-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: #e8f0fe;
+    padding: 10px;
+  }
+  .flex-item {
+    background: #4a90e2;
+    color: white;
+    padding: 20px;
+    flex: 1 1 100px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  /* ====== 4. Grid Example ====== */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 10px;
+  }
+  .grid-item {
+    background: #50e3c2;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    border-radius: 8px;
+    font-size: 18px;
+  }
+
+  /* ====== 5. Transition & Transform ====== */
+  .transition-box {
+    width: 100px;
+    height: 100px;
+    background: #f5a623;
+    margin: 20px;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+  }
+  .transition-box:hover {
+    background: #d0021b;
+    transform: scale(1.2) rotate(10deg);
+  }
+
+  /* ====== 6. Responsive Example ====== */
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .flex-container {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 480px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ====== 7. CSS Variables Example ====== */
+  :root {
+    --primary-color: #4a90e2;
+    --radius: 12px;
+  }
+  .variable-box {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px;
+    border-radius: var(--radius);
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  /* ====== 8. Pseudo-class & Pseudo-element ====== */
+  a { text-decoration: none; color: #4a90e2; }
+  a:hover { color: #d0021b; }
+  p::first-letter { font-size: 2rem; color: #f5a623; font-weight: bold; }
+
+</style>
+</head>
+<body>
+
+<h1>CSS Notes & Live Examples</h1>
+
+<section>
+  <h2>1. Box Model</h2>
+  <div class="box">Box Model</div>
+  <p>Margin → Border → Padding → Content</p>
+</section>
+
+<section>
+  <h2>2. Flexbox (1D Layout)</h2>
+  <div class="flex-container">
+    <div class="flex-item">Flex 1</div>
+    <div class="flex-item">Flex 2</div>
+    <div class="flex-item">Flex 3</div>
+  </div>
+</section>
+
+<section>
+  <h2>3. Grid (2D Layout)</h2>
+  <div class="grid-container">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+  </div>
+</section>
+
+<section>
+  <h2>4. Transition & Transform</h2>
+  <div class="transition-box">Hover Me</div>
+  <p>Transition smoothly changes properties like background, transform, etc.</p>
+</section>
+
+<section>
+  <h2>5. Responsive Design</h2>
+  <p>Resize the browser window to see the grid & flex containers respond.</p>
+</section>
+
+<section>
+  <h2>6. CSS Variables</h2>
+  <div class="variable-box">This uses CSS Variables</div>
+</section>
+
+<section>
+  <h2>7. Pseudo-class & Pseudo-element</h2>
+  <p><a href="#">Hover over this link</a> and see the color change.</p>
+  <p>This paragraph has a styled ::first-letter pseudo-element.</p>
+</section>
+
+</body>
+</html>
